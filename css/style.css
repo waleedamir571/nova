@@ -2159,3 +2159,11 @@ footer:after {
     letter-spacing: 22px
   }
 }
+
+/* Skip painting distant sections until they approach the viewport */
+@media(min-width:992px) {
+  .author-section,.books-section,.series-cta,.trailer,.reviews,.newsletter,footer {
+    content-visibility:auto;
+    contain-intrinsic-size:auto 900px;
+  }
+}

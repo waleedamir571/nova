@@ -9,8 +9,8 @@
     }
     if (!reduceMotion && window.AOS) {
       setAos('.feature:nth-child(-n+2)', 'fade-right'); setAos('.feature:nth-child(n+3)', 'fade-left');
-      setAos('.author-copy', 'fade-right'); setAos('.author-art', 'fade-left', 120);
-      setAos('.books-intro', 'fade-right'); setAos('.book-grid article', 'fade-left', 80);
+      setAos('.author-copy', 'fade-right');
+      setAos('.books-intro', 'fade-right');
       setAos('.series-cta h2, .series-cta p, .series-cta .ornament', 'fade-up'); setAos('.series-cta a', 'fade-up', 120);
       setAos('.trailer-play', 'zoom-in'); setAos('.trailer p', 'fade-up', 120);
       setAos('.reviews h2, .reviews .ornament', 'fade-up');

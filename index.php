@@ -36,7 +36,7 @@
                 src="images/girl.png" alt="NOVA heroine"><img class="hero-fx" src="images/hero-effects.png"
                 alt="">
             <img class="hero-lightning" src="images/trace.png" alt="" aria-hidden="true">
-            <div class="container nova-container hero-content"><img class="hero-logo" data-aos="fade-right" src="images/nova-logo.png"
+            <div class="container nova-container hero-content"><img class="hero-logo" data-aos="fade-right" src="images/nova-logo-opt.png"
                     alt="NOVA">
                 <p class="eyebrow" data-aos="fade-right" data-aos-delay="100">SOME POWERS ARE BORN. OTHERS ARE UNLEASHED.</p><span class="gold-rule" data-aos="fade-right" data-aos-delay="200"></span>
                 <p class="hero-copy" data-aos="fade-right" data-aos-delay="300">In a world where ancient magic collides with futuristic secrets, one girl holds the
@@ -95,32 +95,32 @@
                     <div class="col-lg-8">
                         <div id="all-books" class="book-grid">
                             <article>
-                                <div class="cover"><img src="images/book-1.png" alt="The Spark book cover" loading="lazy" decoding="async"></div>
+                                <div class="cover"><img src="images/book-1-opt-v2.png" alt="The Spark book cover" loading="lazy" decoding="async"></div>
                                 <b>01</b>
                                 <h3>THE SPARK</h3>
                             </article>
                             <article>
-                                <div class="cover"><img src="images/book-2.png" alt="The Shatter book cover" loading="lazy" decoding="async"></div>
+                                <div class="cover"><img src="images/book-2-opt-v2.png" alt="The Shatter book cover" loading="lazy" decoding="async"></div>
                                 <b>02</b>
                                 <h3>THE SHATTER</h3>
                             </article>
                             <article>
-                                <div class="cover"><img src="images/book-3.png" alt="The Awakening book cover" loading="lazy" decoding="async"></div>
+                                <div class="cover"><img src="images/book-3-opt-v2.png" alt="The Awakening book cover" loading="lazy" decoding="async"></div>
                                 <b>03</b>
                                 <h3>THE AWAKENING</h3>
                             </article>
                             <article>
-                                <div class="cover"><img src="images/book-4.png" alt="The Ascension book cover" loading="lazy" decoding="async"></div>
+                                <div class="cover"><img src="images/book-4-opt-v2.png" alt="The Ascension book cover" loading="lazy" decoding="async"></div>
                                 <b>04</b>
                                 <h3>THE ASCENSION</h3>
                             </article>
                             <article>
-                                <div class="cover coming"><img src="images/book-5.png" loading="lazy" decoding="async"
+                                <div class="cover coming"><img src="images/book-5-opt-v2.png" loading="lazy" decoding="async"
                                         alt="The Ascension book cover"><span>COMING SOON</span></div><b>05</b>
                                 <h3>THE ASCENSION</h3>
                             </article>
                             <article>
-                                <div class="cover coming"><img src="images/book-6.png" loading="lazy" decoding="async"
+                                <div class="cover coming"><img src="images/book-6-opt-v2.png" loading="lazy" decoding="async"
                                         alt="The Ascension book cover"><span>COMING SOON</span></div><b>06</b>
                                 <h3>THE ASCENSION</h3>
                             </article>
