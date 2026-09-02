@@ -24,6 +24,49 @@ body {
   overflow-x: hidden
 }
 
+body.is-loading {
+  overflow: hidden
+}
+
+body > header,
+body > main,
+body > footer {
+  opacity: 1;
+  transition: opacity 1s ease
+}
+
+body.is-loading > header,
+body.is-loading > main,
+body.is-loading > footer {
+  opacity: 0
+}
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  background: var(--night);
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease, visibility 1s ease
+}
+
+.page-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none
+}
+
+.page-loader-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover
+}
+
 a {
   text-decoration: none;
   color: inherit
@@ -176,7 +219,7 @@ a {
   justify-content: center;
   width: 294px;
   height: 60px;
-  background: var(--gold);
+  background: #F7DF5A;
   border-radius: 7px;
   color: #0b060d;
   font-family: Inter, sans-serif;
@@ -282,12 +325,21 @@ a {
   top: 315px;
   width: 165px;
   height: 165px;
-  border: 1.3px solid var(--gold);
-  border-radius: 50%;
   color: var(--gold);
-  padding-top: 45px;
+  padding-top: 0px;
   font: 500 15px Inter, sans-serif;
-  letter-spacing: 1.9px
+  letter-spacing: 1.9px;
+  isolation: isolate
+}
+
+.circle-link b {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: url('../images/ring.png') center / contain no-repeat;
+  animation: sigil-ring-turn 9s linear infinite;
+  will-change: transform;
+  pointer-events: none
 }
 
 .author-art {
@@ -401,6 +453,14 @@ a {
   filter: blur(5px) brightness(.5)
 }
 
+.fixed-top {
+    position: static !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
 .coming span {
   position: absolute;
   right: 0;
@@ -416,9 +476,13 @@ a {
 }
 
 .series-cta {
-  height: 468px;
-  background: var(--wine);
-  padding-top: 90px
+    /* height: 468px; */
+    /* background: #0F0D1A; */
+    padding-top: 90px;
+    padding-bottom: 90px;
+        background-image: url(../images/bgs.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .series-cta h2 {
@@ -453,7 +517,15 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative
+  position: relative;
+  overflow: hidden
+}
+
+.trailer-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block
 }
 
 .trailer-play {
@@ -475,7 +547,9 @@ a {
 .trailer p {
   position: absolute;
   bottom: 30px;
-  font-size: 24px
+  z-index: 1;
+  font-size: 24px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .9)
 }
 
 .reviews {
@@ -501,12 +575,12 @@ a {
 }
 
 .review-row p {
-  font-size: 18px;
-  line-height: 28px;
-  color: rgba(240, 232, 208, .75);
-  font-style: italic;
-  margin: 22px 0 30px;
-  max-width: 316px
+    font-size: 20px;
+    line-height: 28px;
+    color: rgba(240, 232, 208, .75);
+    font-style: italic;
+    margin: 22px 0 30px;
+    /* max-width: 316px; */
 }
 
 .review-row h4 {
@@ -540,13 +614,18 @@ a {
 }
 
 .newsletter input {
-  min-width: 0;
-  flex: 1;
-  border: 2px solid rgba(230, 185, 92, .25);
-  background: rgba(255, 255, 255, .05);
-  color: #fff;
-  padding: 0 35px;
-  font-size: 24px
+    min-width: 0;
+    flex: 1;
+    border: 2px solid rgba(230, 185, 92, .25);
+    background: rgba(255, 255, 255, .05);
+    color: #fff;
+    padding: 0 35px;
+    font-size: 24px;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+    border-left: 1px solid #FFF;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(2.5px);
 }
 
 .newsletter button {
@@ -1031,7 +1110,7 @@ footer .col-lg-3>a {
   background-image: url('../images/feature-sprite.png');
   background-repeat: no-repeat;
   background-size: 2104px 1403px;
-  transform: scaleY(-1);
+  /* transform: scaleY(-1); */
   color: transparent
 }
 
@@ -1456,6 +1535,8 @@ footer {
   background-color: #0f0d1a;
   background-image: url('../images/footer.png');
   background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 100% 100%;
+  
   /* background-position: right 179px, center, center;
   background-size: 207px 293px, 100% 100%, 100% 100%; */
 }
@@ -1512,7 +1593,7 @@ footer {
 /* Author section — Figma node 42:1243 and its exact sibling artwork */
 .author-section {
   height: 986px;
-  background-color: #461f1d;
+  background-color: #0F0D1A;
   background-image: url('../images/author-bg.png');
   background-repeat: no-repeat;
   background-position: center top;
@@ -1677,39 +1758,73 @@ img.sigil {
   }
 }
 
-/* Original feature icon spans restored */
+/* Feature medallions */
 .feature span.sigil {
+  position: relative;
   display: block;
   width: 114px;
   height: 118px;
   margin: 0 auto;
+  background: none;
+}
+
+/* Rotating outer ring */
+.feature span.sigil::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 112px;
+  height: 112px;
+  background: url('../images/ring.png') center / contain no-repeat;
+  animation: sigil-ring-turn 9s linear infinite;
+  will-change: transform;
+}
+
+/* Fixed inner artwork */
+.feature span.sigil::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  width: 50px;
+  height: 56px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 114px 118px;
-  transform: none;
+  background-size: contain;
 }
 
-.feature .sigil-1 {
-  background-image: url('../images/1.png')
+.feature .sigil-1::after { background-image: url('../images/i1.png') }
+.feature .sigil-2::after { background-image: url('../images/i2.png') }
+.feature .sigil-3::after { background-image: url('../images/i3.png') }
+.feature .sigil-4::after { background-image: url('../images/i4.png') }
+
+@keyframes sigil-ring-turn {
+  to { transform: rotate(360deg) }
 }
 
-.feature .sigil-2 {
-  background-image: url('../images/2.png')
-}
-
-.feature .sigil-3 {
-  background-image: url('../images/3.png')
-}
-
-.feature .sigil-4 {
-  background-image: url('../images/4.png')
+@media (prefers-reduced-motion: reduce) {
+  .feature span.sigil::before,
+  .circle-link b { animation: none }
 }
 
 @media(max-width:767.98px) {
   .feature span.sigil {
     width: 76px;
     height: 79px;
-    background-size: 76px 79px
+  }
+
+  .feature span.sigil::before {
+    left: 1px;
+    width: 74px;
+    height: 74px;
+  }
+
+  .feature span.sigil::after {
+    top: 19px;
+    left: 21px;
+    width: 34px;
+    height: 37px;
   }
 }
 
@@ -2162,8 +2277,278 @@ footer:after {
 
 /* Skip painting distant sections until they approach the viewport */
 @media(min-width:992px) {
-  .author-section,.books-section,.series-cta,.trailer,.reviews,.newsletter,footer {
+  .author-section,.books-section,.series-cta,.trailer,.reviews,.newsletter {
     content-visibility:auto;
     contain-intrinsic-size:auto 900px;
+  }
+}
+
+/* Figma book-series slider: nodes 110:1209 and 110:1210 */
+.nova-books-slider {
+  position: relative;
+  width: 100%;
+  height: min(57.292vw, 1100px);
+  min-height: 620px;
+  padding: 0;
+  overflow: hidden;
+  background: #050509;
+}
+
+.book-slide,
+.book-slider-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.book-slide {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.012);
+  transition: opacity 1s ease, transform 6s ease;
+}
+
+.book-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.book-slider-shade {
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(51deg, rgba(0, 0, 0, .88) 0%, rgba(0, 0, 0, .5) 29%, rgba(0, 0, 0, 0) 58%);
+}
+
+.book-slider-content {
+  position: absolute;
+  z-index: 2;
+  left: max(4.7vw, calc((100vw - 1580px) / 2));
+  top: 33.27%;
+  width: 630px;
+  color: #fff;
+}
+
+.book-slider-logo {
+  display: block;
+  width: 325px;
+  height: 111px;
+  margin: 0 0 18px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.book-slider-title {
+  margin: 0 0 26px;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: .5px;
+  white-space: nowrap;
+}
+
+.book-slider-author {
+  margin: 0 0 34px;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 28px;
+  line-height: 1.5;
+}
+
+.book-slider-button {
+    display: inline-flex;
+    width: 250px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #F7DF5A;
+    color: #0b060d;
+    font: 700 21px / 1 Inter, Arial, sans-serif;
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.book-slider-button:hover {
+  color: #0b060d;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(230, 185, 92, .3);
+}
+
+.book-slider-progress {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 4.55%;
+  display: flex;
+  width: 614px;
+  height: 30px;
+  align-items: center;
+  transform: translateX(-50%);
+  color: #fff;
+  font: 700 20px/30px 'Times New Roman', Times, serif;
+}
+
+.book-slider-arrow {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(230, 185, 92, .75);
+  border-radius: 50%;
+  background: rgba(5, 5, 9, .55);
+  color: #e6b95c;
+  font: 400 30px/1 Arial, sans-serif;
+  transform: translateY(-50%);
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.book-slider-arrow:hover {
+  background: #e6b95c;
+  color: #0b060d;
+  transform: translateY(-50%) scale(1.06);
+}
+
+.book-slider-prev {
+  left: 28px;
+}
+
+.book-slider-next {
+  right: 28px;
+}
+
+.book-slider-track {
+  position: relative;
+  height: 1px;
+  margin: 0 21px;
+  flex: 1;
+  background: rgba(255, 255, 255, .47);
+}
+
+.book-slider-track i {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 50%;
+  height: 3px;
+  border-radius: 3px;
+  background: #e6b95c;
+  transition: width .7s ease;
+}
+
+.book-slider-anchor {
+  position: absolute;
+  inset: 0 auto auto 0;
+}
+
+@media(max-width:991.98px) {
+  .nova-books-slider {
+    height: 72vw;
+    min-height: 540px;
+  }
+
+  .book-slide {
+    background-position: 57% center;
+  }
+
+  .book-slider-content {
+    left: 6vw;
+    top: 28%;
+    width: 52vw;
+  }
+
+  .book-slider-logo {
+    width: 230px;
+    height: 78px;
+  }
+
+  .book-slider-title {
+    font-size: clamp(24px, 3.5vw, 34px);
+    white-space: normal;
+  }
+
+  .book-slider-author {
+    font-size: 22px;
+  }
+
+  .book-slider-button {
+    width: 205px;
+    height: 64px;
+    font-size: 18px;
+  }
+}
+
+@media(max-width:575.98px) {
+  .nova-books-slider {
+    height: 680px;
+    min-height: 680px;
+  }
+
+  .book-slide {
+    background-position: 68% center;
+  }
+
+  .book-slider-shade {
+    background: linear-gradient(90deg, rgba(0, 0, 0, .92), rgba(0, 0, 0, .42) 72%, rgba(0, 0, 0, .1));
+  }
+
+  .book-slider-content {
+    left: 24px;
+    top: 25%;
+    width: calc(100% - 48px);
+  }
+
+  .book-slider-logo {
+    width: 190px;
+    height: 65px;
+  }
+
+  .book-slider-title {
+    max-width: 290px;
+    margin-bottom: 18px;
+    font-size: 25px;
+  }
+
+  .book-slider-author {
+    margin-bottom: 24px;
+    font-size: 19px;
+  }
+
+  .book-slider-button {
+    width: 170px;
+    height: 55px;
+    font-size: 15px;
+  }
+
+  .book-slider-progress {
+    bottom: 28px;
+    width: calc(100% - 48px);
+    font-size: 16px;
+  }
+
+  .book-slider-arrow {
+    top: auto;
+    bottom: 82px;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+
+  .book-slider-prev {
+    left: 24px;
+  }
+
+  .book-slider-next {
+    right: 24px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .book-slide,
+  .book-slider-track i {
+    transition: none;
   }
 }

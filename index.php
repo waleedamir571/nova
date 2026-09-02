@@ -7,11 +7,18 @@
     <title>NOVA Series</title>
     <meta name="description" content="The NOVA fantasy book series">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="css/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
-<body>
+<body class="is-loading">
+    <div class="page-loader" role="status" aria-label="Loading NOVA">
+        <video class="page-loader-video" autoplay muted playsinline preload="auto">
+            <source src="images/nova-2.mp4" type="video/mp4">
+        </video>
+    </div>
     <header class="site-header fixed-top">
         <nav class="navbar navbar-expand-lg">
             <div class="container nova-container">
@@ -32,17 +39,21 @@
         </nav>
     </header>
     <main>
-        <section id="home" class="hero"><img class="hero-bg" src="images/wich.png" alt=""><img class="hero-woman"
-                src="images/girl.png" alt="NOVA heroine"><img class="hero-fx" src="images/hero-effects.png"
-                alt="">
+        <section id="home" class="hero"><img class="hero-bg" src="images/wich.png" alt="">
+        <!-- <img class="hero-woman"
+                src="images/girl.png" alt="NOVA heroine"> -->
+                <img class="hero-fx" src="images/hero-effects.png" alt="">
             <img class="hero-lightning" src="images/trace.png" alt="" aria-hidden="true">
-            <div class="container nova-container hero-content"><img class="hero-logo" data-aos="fade-right" src="images/nova-logo-opt.png"
-                    alt="NOVA">
-                <p class="eyebrow" data-aos="fade-right" data-aos-delay="100">SOME POWERS ARE BORN. OTHERS ARE UNLEASHED.</p><span class="gold-rule" data-aos="fade-right" data-aos-delay="200"></span>
-                <p class="hero-copy" data-aos="fade-right" data-aos-delay="300">In a world where ancient magic collides with futuristic secrets, one girl holds the
+            <div class="container nova-container hero-content"><img class="hero-logo" data-aos="fade-right"
+                    src="images/nova-logo-opt.png" alt="NOVA">
+                <p class="eyebrow" data-aos="fade-right" data-aos-delay="100">SOME POWERS ARE BORN. OTHERS ARE
+                    UNLEASHED.</p><span class="gold-rule" data-aos="fade-right" data-aos-delay="200"></span>
+                <p class="hero-copy" data-aos="fade-right" data-aos-delay="300">In a world where ancient magic collides
+                    with futuristic secrets, one girl holds the
                     spark that could ignite a war or save everything.</p>
-                <div class="hero-actions" data-aos="fade-right" data-aos-delay="400"><a class="btn-gold" href="#books">EXPLORE THE SERIES</a><button
-                        class="watch-btn" data-scroll="#trailer"><i class="play">▶</i> WATCH TRAILER</button></div>
+                <div class="hero-actions" data-aos="fade-right" data-aos-delay="400"><a class="btn-gold"
+                        href="#books">EXPLORE THE SERIES</a><button class="watch-btn" data-scroll="#trailer"><i
+                            class="play">▶</i> WATCH TRAILER</button></div>
             </div>
         </section>
         <section class="features">
@@ -53,7 +64,7 @@
                         <p>A universe of magic, secrets and power.</p>
                     </div>
                     <div class="col-6 col-lg-3 feature"><span class="sigil sigil-2"></span>
-                        <h3>UNFORGETTABLE<br>CHARACTERS</h3>
+                        <h3>UNFORGETTABLE CHARACTERS</h3>
                         <p>Heroes, outcasts and legends with stories to be told.</p>
                     </div>
                     <div class="col-6 col-lg-3 feature"><span class="sigil sigil-3"></span>
@@ -68,7 +79,7 @@
             </div>
         </section>
         <section id="author" class="author-section">
-            <img class="author-mountain" src="images/moun.svg" alt="" loading="lazy" decoding="async">
+            <img class="author-mountain" src="images/mountains.png" alt="" loading="lazy" decoding="async">
             <img class="author-border-art" src="images/author-ornament.png" alt="" loading="lazy" decoding="async">
             <div class="container nova-container">
                 <div class="row align-items-center">
@@ -76,70 +87,57 @@
                         <h2>DAVE McDOWELL</h2>
                         <p>Seth Ring has written several bestselling series, including Battle Mage Farmer and The Tower
                             Series. He works across a range of genres, from Western to litRPG to suspense, to create
-                            absorbing worlds and lovable characters that offer more than mere escapism.</p><a
+                            absorbing worlds and lovable characters that offer more than mere escapism.</p>
+                            <a
                             class="circle-link" href="#">MEET Dave ➤<b></b></a>
                     </div>
-                    <div class="col-lg-6 author-art"><img src="images/author-scene.png" alt="NOVA characters beneath a celestial gateway" loading="lazy" decoding="async"></div>
+                    <div class="col-lg-6 author-art"><img src="images/author-scene.png"
+                            alt="NOVA characters beneath a celestial gateway" loading="lazy" decoding="async"></div>
                 </div>
             </div>
         </section>
-        <section id="books" class="books-section"><img class="books-arc" src="images/books-arc.svg" alt="">
-            <div class="container nova-container">
-                <div class="row">
-                    <div class="col-lg-4 books-intro">
-                        <h2>THE NOVA<br>SERIES</h2><span class="ornament"></span>
-                        <p>A six-book saga of magic, rebellion and destiny.</p>
-                        <a href="#all-books">VIEW ALL BOOKS
-                            <i>→</i></a>
-                    </div>
-                    <div class="col-lg-8">
-                        <div id="all-books" class="book-grid">
-                            <article>
-                                <div class="cover"><img src="images/book-1-opt-v2.png" alt="The Spark book cover" loading="lazy" decoding="async"></div>
-                                <b>01</b>
-                                <h3>THE SPARK</h3>
-                            </article>
-                            <article>
-                                <div class="cover"><img src="images/book-2-opt-v2.png" alt="The Shatter book cover" loading="lazy" decoding="async"></div>
-                                <b>02</b>
-                                <h3>THE SHATTER</h3>
-                            </article>
-                            <article>
-                                <div class="cover"><img src="images/book-3-opt-v2.png" alt="The Awakening book cover" loading="lazy" decoding="async"></div>
-                                <b>03</b>
-                                <h3>THE AWAKENING</h3>
-                            </article>
-                            <article>
-                                <div class="cover"><img src="images/book-4-opt-v2.png" alt="The Ascension book cover" loading="lazy" decoding="async"></div>
-                                <b>04</b>
-                                <h3>THE ASCENSION</h3>
-                            </article>
-                            <article>
-                                <div class="cover coming"><img src="images/book-5-opt-v2.png" loading="lazy" decoding="async"
-                                        alt="The Ascension book cover"><span>COMING SOON</span></div><b>05</b>
-                                <h3>THE ASCENSION</h3>
-                            </article>
-                            <article>
-                                <div class="cover coming"><img src="images/book-6-opt-v2.png" loading="lazy" decoding="async"
-                                        alt="The Ascension book cover"><span>COMING SOON</span></div><b>06</b>
-                                <h3>THE ASCENSION</h3>
-                            </article>
-                        </div>
-                    </div>
-                </div>
+        <section id="books" class="books-section nova-books-slider" aria-label="NOVA book series">
+            <div class="book-slide is-active" data-title="THE SPARK AND THE SHATTER" data-author="DP WOLF"
+                style="background-image:url('images/slider-spark.png')" aria-hidden="false"></div>
+            <div class="book-slide" data-title="THE HARMONIC LEAVING" data-author="DP WOLF"
+                style="background-image:url('images/slider-harmonic.png')" aria-hidden="true"></div>
+            <div class="book-slide" data-title="QUIET AND THE CHORD" data-author="DP WOLF"
+                style="background-image:url('images/s3.png')" aria-hidden="true"></div>
+            <div class="book-slide" data-title="BEFORE THE FIRST SILENCE" data-author="DP WOLF"
+                style="background-image:url('images/s4.png')" aria-hidden="true"></div>
+            <div class="book-slider-shade" aria-hidden="true"></div>
+            <div class="book-slider-content">
+                <img src="images/slider-nova-logo.png" class="book-slider-logo" alt="NOVA">
+                <h2 class="book-slider-title">THE SPARK AND THE SHATTER</h2>
+                <p class="book-slider-author">DP WOLF</p>
+                <a class="book-slider-button" href="#all-books">TAKE A LOOK</a>
             </div>
+            <!-- <button class="book-slider-arrow book-slider-prev" type="button"
+                aria-label="Previous slide">&#8592;</button>
+            <button class="book-slider-arrow book-slider-next" type="button" aria-label="Next slide">&#8594;</button> -->
+            <div class="book-slider-progress" aria-label="Slide 1 of 4">
+                <b class="book-slider-current">01</b>
+                <span class="book-slider-track"><i></i></span>
+                <b class="book-slider-total">04</b>
+            </div>
+            <span id="all-books" class="book-slider-anchor" aria-hidden="true"></span>
         </section>
         <section class="series-cta">
             <div class="container text-center">
-                <h2>THE NOVA SERIES</h2>
-                <p>A six-book saga of magic, rebellion and destiny.</p>
-               <img class="ornament" src="images/line.png" alt="">
+                <h2>Nova Trilogy Trailer</h2>
+                <img class="ornament" src="images/line.png" alt="">
+                <!-- <p>A six-book saga of magic, rebellion and destiny.</p> -->
+                <!--
                 <div><a href="#books">BOOK TRAILER 1</a><a href="#books">BOOK TRAILER 2</a><a href="#books">BOOK TRAILER
-                        3</a></div>
+                        3</a></div> -->
             </div>
         </section>
-        <section id="trailer" class="trailer"><button class="trailer-play" aria-label="Play trailer">▶</button>
-            <p>Before humanity knew the truth,</p>
+        <section id="trailer" class="trailer">
+            <video class="trailer-video" autoplay muted loop playsinline preload="auto" poster="images/nova-poster.jpg">
+                <source src="images/nova-web.mp4" type="video/mp4">
+
+            </video>
+            <!-- <p>Before humanity knew the truth,</p> -->
         </section>
         <section id="reviews" class="reviews">
             <div class="container nova-container">
@@ -187,7 +185,12 @@
             <div class="row footer-grid">
                 <div class="col-lg-4"><img class="footer-logo" src="images/footer-logo.png" alt="NOVA">
                     <p>A saga of power, destiny and the choices that shape worlds.</p>
-                    <div class="socials"><a href="#">f</a><a href="#">◎</a><a href="#">𝕏</a><a href="#">▶</a></div>
+                    <div class="socials">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
                 <div class="col-6 col-lg-2">
                     <h3>NAVIGATION</h3><a href="#home">Home</a><a href="#books">Books</a><a
