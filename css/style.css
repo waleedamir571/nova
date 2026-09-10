@@ -28,17 +28,26 @@ body.is-loading {
   overflow: hidden
 }
 
-body > header,
-body > main,
-body > footer {
-  opacity: 1;
-  transition: opacity 1s ease
-}
+ .author-stats {
+        position: relative;
+        height: 36.770833vw;
+        padding-top: 5.208333vw;
+        background: url(../images/books/nextbg.png) center / contain no-repeat;
 
-body.is-loading > header,
-body.is-loading > main,
-body.is-loading > footer {
-  opacity: 0
+    }
+
+
+.author-stat-icon::before {
+    content: '';
+    position: absolute;
+    top: -0.9vw;
+    left: -1.vw;
+    width: 4.2vw;
+    height: 4.2vw;
+    background: url(../images/ring.png) center / contain no-repeat;
+    animation: sigil-ring-turn 9s linear infinite;
+    will-change: transform;
+    z-index: 1;
 }
 
 .page-loader {
@@ -51,7 +60,7 @@ body.is-loading > footer {
   overflow: hidden;
   opacity: 1;
   visibility: visible;
-  transition: opacity 1s ease, visibility 1s ease
+  transition: opacity .6s ease, visibility .6s ease
 }
 
 .page-loader.is-hidden {
@@ -73,9 +82,9 @@ a {
 }
 
 .nova-container {
-  max-width: var(--container);
-  padding-left: 0;
-  padding-right: 0
+
+  padding-top: 100px;
+ 
 }
 
 .site-header {
@@ -219,7 +228,7 @@ a {
   justify-content: center;
   width: 294px;
   height: 60px;
-  background: #F7DF5A;
+ background: #F6A72A;
   border-radius: 7px;
   color: #0b060d;
   font-family: Inter, sans-serif;
@@ -642,11 +651,11 @@ a {
 }
 
 footer {
-  min-height: 862px;
-  padding: 100px 0 0;
+  /* min-height: 862px; */
+  /* padding-top: 85px; */
   position: relative;
-  background: linear-gradient(#161325, #0f0d1a);
-  overflow: hidden
+  /* background: linear-gradient(#161325, #0f0d1a); */
+  /* overflow: hidden; */
 }
 
 footer:after {
@@ -706,7 +715,7 @@ footer .col-lg-3>a {
   position: relative;
   z-index: 2;
   border-top: 1px solid rgba(255, 255, 255, .15);
-  margin-top: 250px;
+  margin-top: 360px;
   padding: 30px;
   text-align: center;
   color: rgba(255, 255, 255, .5);
@@ -1457,7 +1466,7 @@ footer:before {
 }
 
 footer>.nova-container {
-  position: relative;
+  /* position: relative; */
   z-index: 2
 }
 
@@ -1534,9 +1543,10 @@ footer>.nova-container {
 footer {
   background-color: #0f0d1a;
   background-image: url('../images/footer.png');
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: 100% 100%;
-  
+  background-repeat: no-repeat;
+  /* background-size: 100% 100%; */
+   background-size: cover;
+    background-position: center;
   /* background-position: right 179px, center, center;
   background-size: 207px 293px, 100% 100%, 100% 100%; */
 }
@@ -2078,7 +2088,6 @@ img.sigil {
   }
 
   .hero-fx,
-  .hero-woman,
   .hero-lightning {
     transform: none !important;
     transition: none
@@ -2153,23 +2162,42 @@ img.sigil {
   animation-play-state: paused
 }
 
-/* Girl remains completely static; only lightning follows the pointer */
-.hero-woman {
-  transform: none !important;
+/* Float the complete hero artwork; the separate heroine layer is disabled. */
+.hero-bg {
   transition: none !important;
-  will-change: auto !important;
+  transform-origin: 58% 70%;
+  animation: nova-heroine-float 5s ease-in-out infinite alternate;
+  will-change: transform, filter !important;
 }
 
-.hero.is-parallax-active .hero-woman {
-  transform: none !important;
-  will-change: auto !important
+@keyframes nova-heroine-float {
+  from {
+    filter: brightness(.96);
+    transform: translate3d(0, 4px, 0) scale(1)
+  }
+
+  to {
+    filter: brightness(1.08);
+    transform: translate3d(0, -12px, 0) scale(1.012)
+  }
 }
 
-.hero-bg,
 .hero-fx {
   transform: none !important;
   transition: none !important;
   will-change: auto !important;
+}
+
+.hero.hero-paused .hero-bg {
+  animation-play-state: paused
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .hero-bg {
+    animation: none;
+    filter: none;
+    transform: none
+  }
 }
 
 /* Exact Figma typography roles */
@@ -2249,7 +2277,7 @@ footer:after {
   top: 359.19px;
   bottom: auto;
   font-family: var(--font-decorative);
-  font-size: 504.513px;
+ font-size: 480px;
   font-weight: 700;
   line-height: 556.716px;
   letter-spacing: 75.1566px;
@@ -2364,7 +2392,7 @@ footer:after {
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    background: #F7DF5A;
+    background: #F6A72A;
     color: #0b060d;
     font: 700 21px / 1 Inter, Arial, sans-serif;
     text-decoration: none;

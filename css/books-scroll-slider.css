@@ -1,0 +1,186 @@
+/* Independent wheel-controlled NOVA books slider. */
+.nbs-scroll-slider {
+  --nbs-slides: 1;
+  position: relative;
+  /* Four-slide fallback; JavaScript sets the exact cross-browser height. */
+  height: 400vh;
+  background: #050509;
+}
+
+.nbs-stage {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #050509;
+  isolation: isolate;
+  outline: 0;
+}
+
+.nbs-slide,
+.nbs-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.nbs-slide {
+  z-index: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.08) translate3d(0, 2%, 0);
+  filter: brightness(.72);
+  transition: opacity .75s cubic-bezier(.4, 0, .2, 1),
+              transform 1.15s cubic-bezier(.2, .75, .25, 1),
+              filter 1s ease;
+  will-change: opacity, transform;
+}
+
+.nbs-slide.is-active {
+  z-index: 1;
+  opacity: 1;
+  transform: scale(1) translate3d(0, 0, 0);
+  filter: brightness(1);
+}
+
+.nbs-slide.is-leaving-up {
+  transform: scale(1.03) translate3d(0, -3%, 0);
+}
+
+.nbs-slide.is-leaving-down {
+  transform: scale(1.03) translate3d(0, 3%, 0);
+}
+
+.nbs-shade {
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(51deg, rgba(0, 0, 0, .9) 0%, rgba(0, 0, 0, .52) 30%, rgba(0, 0, 0, 0) 61%);
+}
+
+.nbs-content {
+  position: absolute;
+  z-index: 3;
+  left: max(4.7vw, calc((100vw - 1580px) / 2));
+  top: 50%;
+  width: min(630px, 44vw);
+  color: #fff;
+  transform: translateY(-50%);
+  transition: opacity .22s ease, transform .35s ease;
+}
+
+.nbs-content.is-changing {
+  opacity: 0;
+  transform: translate3d(0, calc(-50% + 22px), 0);
+}
+
+.nbs-logo {
+  display: block;
+  width: min(325px, 24vw);
+  height: auto;
+  margin: 0 0 18px;
+}
+
+.nbs-title {
+  margin: 0 0 26px;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(28px, 2.1vw, 40px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: .5px;
+}
+
+.nbs-description {
+  max-width: 570px;
+  margin: 0 0 34px;
+  color: #fff;
+  font-family: Inter, Arial, sans-serif;
+  font-size: clamp(15px, 1.05vw, 18px);
+  line-height: 1.65;
+}
+
+.nbs-button {
+  display: inline-flex;
+  width: 250px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #f6a72a;
+  color: #0b060d;
+  font: 700 21px/1 Inter, Arial, sans-serif;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.nbs-button:hover,
+.nbs-button:focus-visible {
+  color: #0b060d;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(230, 185, 92, .3);
+}
+
+.nbs-progress {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 4.55%;
+  display: flex;
+  width: min(614px, calc(100% - 48px));
+  min-height: 30px;
+  align-items: center;
+  transform: translateX(-50%);
+  color: #fff;
+  font: 700 20px/30px 'Times New Roman', Times, serif;
+}
+
+.nbs-track {
+  position: relative;
+  height: 1px;
+  margin: 0 21px;
+  flex: 1;
+  background: rgba(255, 255, 255, .47);
+}
+
+.nbs-track i {
+  position: absolute;
+  inset: -1px auto auto 0;
+  width: calc(100% / var(--nbs-slides));
+  height: 3px;
+  border-radius: 3px;
+  background: #e6b95c;
+  transition: width .65s cubic-bezier(.2, .75, .25, 1);
+}
+
+.nbs-anchor {
+  position: absolute;
+  inset: 0 auto auto 0;
+}
+
+@media (max-width: 991.98px) {
+  .nbs-slide { background-position: 60% center; }
+  .nbs-content { left: 6vw; width: 55vw; }
+  .nbs-logo { width: min(230px, 32vw); }
+  .nbs-title { font-size: clamp(24px, 3.5vw, 34px); }
+  .nbs-button { width: 205px; height: 58px; font-size: 18px; }
+}
+
+@media (max-width: 575.98px) {
+  .nbs-slide { background-position: 68% center; }
+  .nbs-shade { background: linear-gradient(90deg, rgba(0, 0, 0, .92), rgba(0, 0, 0, .44) 74%, rgba(0, 0, 0, .1)); }
+  .nbs-content { left: 24px; top: 45%; width: calc(100% - 48px); }
+  .nbs-logo { width: 190px; }
+  .nbs-title { max-width: 300px; margin-bottom: 18px; font-size: 25px; }
+  .nbs-description { max-width: 310px; margin-bottom: 24px; font-size: 14px; line-height: 1.55; }
+  .nbs-button { width: 170px; height: 55px; font-size: 15px; }
+  .nbs-progress { bottom: 28px; font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nbs-slide,
+  .nbs-content,
+  .nbs-track i { transition: none; }
+}

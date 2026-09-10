@@ -1,48 +1,11 @@
-<!doctype html>
-<html lang="en">
+<?php include 'partials/header.php' ?>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>NOVA Series</title>
-    <meta name="description" content="The NOVA fantasy book series">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link href="css/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-</head>
 
-<body class="is-loading">
-    <div class="page-loader" role="status" aria-label="Loading NOVA">
-        <video class="page-loader-video" autoplay muted playsinline preload="auto">
-            <source src="images/nova-2.mp4" type="video/mp4">
-        </video>
-    </div>
-    <header class="site-header fixed-top">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container nova-container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                    aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-                <div class="collapse navbar-collapse" id="mainNav">
-                    <ul class="navbar-nav nav-left">
-                        <li><a href="#books">BOOKS</a></li>
-                        <li><a href="#trailer">TRAILERS</a></li>
-                    </ul>
-                    <a class="navbar-brand" href="#home"><img src="images/footer-logo.png" alt="NOVA"></a>
-                    <ul class="navbar-nav nav-right">
-                        <li><a href="#author">ABOUT AUTHOR</a></li>
-                        <li><a href="#reviews">REVIEWS</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
     <main>
-        <section id="home" class="hero"><img class="hero-bg" src="images/wich.png" alt="">
-        <!-- <img class="hero-woman"
-                src="images/girl.png" alt="NOVA heroine"> -->
-                <img class="hero-fx" src="images/hero-effects.png" alt="">
+        <section id="home" class="hero">
+            <img class="hero-bg" src="images/wich.png" alt="">
+            <!-- <img class="hero-woman" src="images/girl.png" alt="NOVA heroine"> -->
+            <img class="hero-fx" src="images/hero-effects.png" alt="">
             <img class="hero-lightning" src="images/trace.png" alt="" aria-hidden="true">
             <div class="container nova-container hero-content"><img class="hero-logo" data-aos="fade-right"
                     src="images/nova-logo-opt.png" alt="NOVA">
@@ -84,7 +47,7 @@
             <div class="container nova-container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 author-copy"><span class="pretitle">ABOUT THE AUTHOR</span>
-                        <h2>DAVE McDOWELL</h2>
+                        <h2>DP WOLF</h2>
                         <p>Seth Ring has written several bestselling series, including Battle Mage Farmer and The Tower
                             Series. He works across a range of genres, from Western to litRPG to suspense, to create
                             absorbing worlds and lovable characters that offer more than mere escapism.</p>
@@ -110,7 +73,7 @@
                 <img src="images/slider-nova-logo.png" class="book-slider-logo" alt="NOVA">
                 <h2 class="book-slider-title">THE SPARK AND THE SHATTER</h2>
                 <p class="book-slider-author">DP WOLF</p>
-                <a class="book-slider-button" href="#all-books">TAKE A LOOK</a>
+              <a class="book-slider-button" href="#a">BUY NOW</a>
             </div>
             <!-- <button class="book-slider-arrow book-slider-prev" type="button"
                 aria-label="Previous slide">&#8592;</button>
@@ -180,38 +143,5 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="container nova-container">
-            <div class="row footer-grid">
-                <div class="col-lg-4"><img class="footer-logo" src="images/footer-logo.png" alt="NOVA">
-                    <p>A saga of power, destiny and the choices that shape worlds.</p>
-                    <div class="socials">
-                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-2">
-                    <h3>NAVIGATION</h3><a href="#home">Home</a><a href="#books">Books</a><a
-                        href="#trailer">Trailers</a><a href="#author">About Author</a><a href="#reviews">Reviews</a><a
-                        href="#newsletter">Newsletter</a>
-                </div>
-                <div class="col-6 col-lg-2">
-                    <h3>LEGAL</h3><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Cookie
-                        Policy</a>
-                </div>
-                <div class="col-lg-3">
-                    <h3>CONTACT</h3><a href="mailto:hello@novaseries.com">hello@novaseries.com</a>
-                </div>
-            </div>
-            <div class="copyright">© 2026 NOVA Series. All Rights Reserved.</div>
-        </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/script.js"></script>
-</body>
-
-</html>
+   
+<?php include 'partials/footer.php' ?>
