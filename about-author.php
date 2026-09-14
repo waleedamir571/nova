@@ -37,14 +37,14 @@
         overflow: hidden;
     }
 
-    /* .author-portrait-crop img {
-        position: absolute;
+    .author-portrait-crop img {
+        /* position: absolute;
         top: -34.01%;
-        left: 0;
+        left: 0; */
         width: 100%;
-        height: 236.03%;
-        max-width: none;
-    } */
+        /* height: 236.03%;
+        max-width: none; */
+    }
 
 
 
@@ -223,7 +223,7 @@
     .author-reflection {
         position: relative;
         height: 41.666667vw;
-        padding-top: 10.520833vw;
+        padding-top: 7.520833vw;
     }
 
     .author-reflection-copy {
@@ -235,7 +235,7 @@
 
     .author-reflection h2 {
         width: 37.353125vw;
-        min-height: 3.90625vw;
+        /* min-height: 3.90625vw; */
         color: #e6b95c;
         font: 700 1.145833vw/normal 'Times New Roman', serif;
         text-transform: uppercase;
@@ -377,13 +377,12 @@
         height: .67%;
     }
 
-    .author-bottom-lines {
-        top: 30.729167vw;
-        right: 0;
-        width: 55.290052vw;
-        height: 23.854167vw;
-    }
-
+   .author-bottom-lines {
+    top: 32.729167vw;
+    right: 0;
+    width: 55.290052vw;
+    height: 23.854167vw;
+}
     .author-bottom-lines .line-h {
         left: .31%;
         top: 32.78%;
@@ -602,7 +601,7 @@
         <div class="author-opening">
             <section id="home" class="author-portrait container-fluid p-0" aria-labelledby="author-page-title">
                 <h1 id="author-page-title" class="visually-hidden">Meet the Author</h1>
-                <div class="author-portrait-crop" data-aos="fade-left"><img src="images/author/portrait.png"
+                <div class="author-portrait-crop" data-aos="fade-left"><img  src="images/author/portrait.png"
                         alt="Author Seth Ring wearing glasses and a brown shirt in his study" fetchpriority="high">
                 </div>
             </section>
@@ -616,7 +615,7 @@
                 <img class="line-bottom" src="images/author/hero-bottom.svg" alt="">
             </div>
             <section class="author-stats container-fluid" aria-labelledby="author-stats-title">
-                <h2 id="author-stats-title" data-aos="fade-right">Author Stats</h2>
+                <h2 id="author-stats-title" data-aos="fade-right">About the  Author </h2>
                 <ul class="author-stat-list row row-cols-2 row-cols-md-5 justify-content-center gy-4" data-aos="fade-left">
                     <li class="author-stat col text-center">
                         <span class="author-stat-icon">
@@ -625,7 +624,7 @@
                             <span class="dot-bottom"></span>
                         </span>
                         <h3>Books</h3>
-                        <p class="counter" data-target="40" data-suffix="+">0</p>
+                        <p class="counter" data-target="3" data-suffix="+">0</p>
                     </li>
                     <li class="author-stat col text-center">
                         <span class="author-stat-icon">
@@ -661,7 +660,7 @@
                             <span class="dot-bottom"></span>
                         </span>
                         <h3>Countries of Origin</h3>
-                        <p class="counter" data-target="2">0</p>
+                        <p class="counter" data-target="1">0</p>
                     </li>
                 </ul>
             </section>
@@ -700,9 +699,13 @@
                         </div>
                     </div>
         </section>
-        <section class="author-reflection container-fluid" aria-labelledby="author-reflection-title">
+        <section class="author-reflection container" aria-labelledby="author-reflection-title">
+           
             <div class="row justify-content-center g-0">
-                <div class="col-12 col-md-5">
+                <div class="col-md-6">
+                    <img class="w-80" src="images/author/author.jpg" alt="">
+                </div>
+                <div class="col-md-6">
                     <div class="author-reflection-copy mx-auto" data-aos="fade-right">
                         <h2 id="author-reflection-title">About the Author</h2>
                         <p>DP Wolf is a writer, storyteller, and lifelong collector of the strange, funny, and

@@ -711,6 +711,10 @@ footer .col-lg-3>a {
   line-height: 52px
 }
 
+.w-80{
+  width:90%;
+}
+
 .copyright {
   position: relative;
   z-index: 2;
