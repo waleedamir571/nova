@@ -48,7 +48,7 @@
 
 
 
-   
+
     .author-stats h2 {
         display: flex;
         align-items: center;
@@ -377,12 +377,13 @@
         height: .67%;
     }
 
-   .author-bottom-lines {
-    top: 32.729167vw;
-    right: 0;
-    width: 55.290052vw;
-    height: 23.854167vw;
-}
+    .author-bottom-lines {
+        top: 32.729167vw;
+        right: -213px;
+        width: 55.290052vw;
+        height: 23.854167vw;
+    }
+
     .author-bottom-lines .line-h {
         left: .31%;
         top: 32.78%;
@@ -601,7 +602,7 @@
         <div class="author-opening">
             <section id="home" class="author-portrait container-fluid p-0" aria-labelledby="author-page-title">
                 <h1 id="author-page-title" class="visually-hidden">Meet the Author</h1>
-                <div class="author-portrait-crop" data-aos="fade-left"><img  src="images/author/portrait.png"
+                <div class="author-portrait-crop" data-aos="fade-left"><img src="images/author/portrait.png"
                         alt="Author Seth Ring wearing glasses and a brown shirt in his study" fetchpriority="high">
                 </div>
             </section>
@@ -615,8 +616,9 @@
                 <img class="line-bottom" src="images/author/hero-bottom.svg" alt="">
             </div>
             <section class="author-stats container-fluid" aria-labelledby="author-stats-title">
-                <h2 id="author-stats-title" data-aos="fade-right">About the  Author </h2>
-                <ul class="author-stat-list row row-cols-2 row-cols-md-5 justify-content-center gy-4" data-aos="fade-left">
+                <h2 id="author-stats-title" data-aos="fade-right">About the Author </h2>
+                <ul class="author-stat-list row row-cols-2 row-cols-md-5 justify-content-center gy-4"
+                    data-aos="fade-left">
                     <li class="author-stat col text-center">
                         <span class="author-stat-icon">
                             <img src="images/author/books.svg" alt="" width="22" height="30">
@@ -700,7 +702,7 @@
                     </div>
         </section>
         <section class="author-reflection container" aria-labelledby="author-reflection-title">
-           
+
             <div class="row justify-content-center g-0">
                 <div class="col-md-6">
                     <img class="w-80" src="images/author/author.jpg" alt="">
