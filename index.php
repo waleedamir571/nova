@@ -52,7 +52,7 @@
                             Series. He works across a range of genres, from Western to litRPG to suspense, to create
                             absorbing worlds and lovable characters that offer more than mere escapism.</p>
                             <a
-                            class="circle-link" href="#">MEET Dave ➤<b></b></a>
+                            class="circle-link" href="about-author">MEET Dave ➤<b></b></a>
                     </div>
                     <div class="col-lg-6 author-art"><img src="images/author-scene.png"
                             alt="NOVA characters beneath a celestial gateway" loading="lazy" decoding="async"></div>

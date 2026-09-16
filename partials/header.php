@@ -27,12 +27,15 @@
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav nav-left">
                         <li><a href="books">BOOKS</a></li>
+                         <li><a href="about-author">ABOUT AUTHOR</a></li>
                         <li><a href="#trailer">TRAILERS</a></li>
+                          <!-- <li><a href="#">REVIEWS</a></li> -->
                     </ul>
                     <a class="navbar-brand" href="index"><img src="images/logo.webp" alt="NOVA"></a>
                     <ul class="navbar-nav nav-right">
-                        <li><a href="about-author">ABOUT AUTHOR</a></li>
-                        <li><a href="#reviews">REVIEWS</a></li>
+                     
+                         <li><a href="characters">MEET THE CHARACTERS</a></li>
+                        <li><a href="#">REVIEWS</a></li>
                     </ul>
                 </div>
             </div>

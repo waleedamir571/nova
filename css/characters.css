@@ -1,17 +1,35 @@
-/* Figma 304:240: dimensions scale from its 1920px desktop frame. */
+/* Characters — Figma node 304:240, scaled from its 1920px desktop canvas. */
 .characters-page {
     background: var(--night);
     color: #fff;
+    overflow: hidden
 }
 
-.characters-page h1, .characters-page h2, .characters-page h3, .characters-page .character-copy p {
-    margin: 0;
+.characters-page h1,
+.characters-page h2,
+.characters-page h3,
+.characters-page h4,
+.characters-page p,
+.characters-page dl,
+.characters-page dt,
+.characters-page dd {
+    margin: 0
 }
 
 .characters-hero {
     position: relative;
     height: 44.270833vw;
-    isolation: isolate;
+    /* background: #272235; */
+    isolation: isolate
+}
+
+.characters-hero:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #0003;
+    z-index: 1;
+    pointer-events: none
 }
 
 .characters-hero-image {
@@ -22,11 +40,12 @@
     height: 52.135417vw;
     max-width: none;
     mix-blend-mode: screen;
-    pointer-events: none;
+    pointer-events: none
 }
 
 .characters-hero h1 {
     position: absolute;
+    z-index: 2;
     top: 23.411458vw;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -36,15 +55,15 @@
     letter-spacing: .17937vw;
     text-transform: uppercase;
     text-align: center;
-    text-shadow: 0 4px 4px #0004;
+    text-shadow: 0 4px 4px #0004
 }
 
 .characters-catalogue {
     background: linear-gradient(#161325, #0f0d1a);
-    padding: 5.208333vw 0 23.489583vw;
+    padding: 5.208333vw 0 7.395833vw
 }
 
-.characters-catalogue h2 {
+.characters-catalogue>h2 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,7 +72,7 @@
     font: 700 3.002448vw/4.093542vw 'Times New Roman', serif;
     letter-spacing: .175786vw;
     text-transform: uppercase;
-    text-align: center;
+    text-align: center
 }
 
 .characters-books {
@@ -61,42 +80,42 @@
     align-items: center;
     justify-content: center;
     gap: 4.427083vw;
-    margin-top: 1.041667vw;
     height: 2.231979vw;
-    font: 400 1.354167vw/2.231979vw 'Times New Roman', serif;
+    margin-top: 1.041667vw;
+    font: 400 1.354167vw/2.231979vw 'Times New Roman', serif
 }
 
 .characters-books span {
     width: 5.15625vw;
     text-align: center;
-    white-space: nowrap;
+    white-space: nowrap
 }
 
 .characters-books [aria-current] {
     color: var(--gold);
     text-decoration: underline;
-    text-underline-offset: .16em;
+    text-underline-offset: .16em
 }
 
 .characters-books i {
-    height: 1.458333vw;
     width: 1px;
-    background: #fff;
+    height: 1.458333vw;
+    background: #fff
 }
 
 .characters-timeline {
     position: relative;
-    margin-top: 5.424271vw;
+    margin-top: 5.424271vw
 }
 
 .characters-timeline-line {
     position: absolute;
     left: 50%;
     top: -2.8125vw;
-    width: 133.541667vw;
-    height: 1px;
-    transform: rotate(90deg);
-    transform-origin: top left;
+    bottom: 10.260417vw;
+    width: 1px;
+    background: #d5b583;
+    transform: translateX(-50%)
 }
 
 .characters-timeline-start {
@@ -105,45 +124,42 @@
     top: -3.645833vw;
     width: .46875vw;
     height: .572917vw;
-    transform: translateX(-50%);
+    transform: translateX(-50%)
 }
 
 .character-row {
     position: relative;
     display: grid;
     grid-template-columns: 38.75vw 9.21875vw 38.75vw;
-    margin-left: 6.666667vw;
     min-height: 38.75vw;
+    margin-left: 6.666667vw
 }
 
-.character-row + .character-row {
-    margin-top: 2.291667vw;
+.character-row+.character-row {
+    margin-top: 2.291667vw
 }
 
 .character-art {
+    position: relative;
     grid-column: 1;
     grid-row: 1;
-    position: relative;
     width: 38.75vw;
-    height: 38.75vw;
+    height: 38.75vw
 }
 
-.character-art > img {
+.character-art img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover
 }
 
-.character-art-fade::after, .character-art-empty {
-    background: linear-gradient(45deg, #121020, #12102000 42.608%), linear-gradient(225deg, #121020, #12102000 47.312%);
-}
-
-.character-art-fade::after {
-    content: '';
+.character-art:after {
+    content: "";
     position: absolute;
     inset: 0;
-    pointer-events: none;
+    background: linear-gradient(45deg, #121020, transparent 42.608%), linear-gradient(225deg, #121020, transparent 47.312%);
+    pointer-events: none
 }
 
 .character-marker {
@@ -151,79 +167,98 @@
     grid-column: 2;
     grid-row: 1;
     justify-self: center;
-    margin-left: -15px;
     width: 1.927083vw;
     height: 2.395833vw;
+    margin-left: -15px;
 }
 
-.character-marker > img:first-child {
+.character-marker>img:first-child {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 100%
 }
 
 .character-marker .character-number {
     position: absolute;
-    left: 50%;
-    top: 17px;
-    transform: translateX(-50%);
-    height: .619323vw;
-    width: .238958vw;
-}
-
-.character-row-reverse .character-number {
-    /* top: 0; */
-    width: .400521vw;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #121020;
+    font: 600 18px / 1 'Times New Roman', serif;
+    text-align: center;
 }
 
 .character-copy {
     grid-column: 3;
     grid-row: 1;
-    width: 36.5625vw;
+    width: 38.75vw;
     padding-top: .3125vw;
-    font: 400 1.25vw/2.083333vw 'Times New Roman', serif;
+    font: 400 1.25vw/2.083333vw 'Times New Roman', serif
 }
 
 .character-copy h3 {
     font: 700 2.083333vw/2.395833vw 'Times New Roman', serif;
     letter-spacing: .02626vw;
-    text-transform: uppercase;
+    text-transform: uppercase
 }
 
-.character-copy .character-description {
-    margin-top: .729167vw;
-}
-
-.character-copy .character-facts {
-    margin-top: 1.041667vw;
-}
-
-.character-facts span {
+.character-copy h4 {
+    margin-top: 1.09375vw;
     color: var(--gold);
+    font: 700 1.458333vw/2.083333vw 'Times New Roman', serif;
+    text-transform: uppercase
+}
+
+.character-description {
+    margin-top: .78125vw
+}
+
+.character-facts {
+    margin-top: 1.041667vw
+}
+
+.character-facts div {
+    display: flex;
+    gap: .32em
+}
+
+.character-facts dt {
+    flex: 0 0 auto;
+    color: var(--gold);
+    font-weight: 400
+}
+
+.character-facts dd {
+    color: #fff;
+    font-size: 21.5px;
 }
 
 .character-row-reverse .character-art {
-    grid-column: 3;
+    grid-column: 3
 }
 
 .character-row-reverse .character-copy {
     grid-column: 1;
     justify-self: end;
-    text-align: right;
+    text-align: right
 }
 
-@media (max-width: 767px) {
+.character-row-reverse .character-facts div {
+    justify-content: flex-end
+}
+
+@media(max-width:767px) {
     .characters-hero {
         height: 75vw;
         min-height: 300px;
-        overflow: hidden;
+        overflow: hidden
     }
 
     .characters-hero-image {
         width: 170%;
-        height: auto;
         max-width: none;
-        left: -35%;
+        left: -35%
     }
 
     .characters-hero h1 {
@@ -231,88 +266,96 @@
         width: 92%;
         font-size: clamp(25px, 6vw, 44px);
         line-height: 1.2;
-        letter-spacing: 1px;
+        letter-spacing: 1px
     }
 
     .characters-catalogue {
-        padding: 42px 20px 80px;
+        padding: 42px 20px 80px
     }
 
-    .characters-catalogue h2 {
+    .characters-catalogue>h2 {
         height: auto;
         font-size: 27px;
         line-height: 1.3;
-        letter-spacing: 1px;
+        letter-spacing: 1px
     }
 
     .characters-books {
+        height: 28px;
         margin-top: 24px;
         gap: 22px;
-        height: 28px;
         font-size: 16px;
-        line-height: 28px;
+        line-height: 28px
     }
 
     .characters-books span {
-        width: auto;
+        width: auto
     }
 
     .characters-books i {
-        height: 18px;
+        height: 18px
     }
 
     .characters-timeline {
-        margin-top: 40px;
+        margin-top: 40px
     }
 
-    .characters-timeline-line, .characters-timeline-start {
-        display: none;
+    .characters-timeline-line,
+    .characters-timeline-start {
+        display: none
     }
 
     .character-row {
         display: flex;
         flex-direction: column;
-        margin-left: 0;
         min-height: 0;
+        margin-left: 0
     }
 
-    .character-row + .character-row {
-        margin-top: 48px;
+    .character-row+.character-row {
+        margin-top: 56px
     }
 
-    .character-art {
+    .character-art,
+    .character-row-reverse .character-art {
+        order: 1;
         width: 100%;
         height: auto;
-        aspect-ratio: 1;
-    }
-
-    .character-art-empty {
-        display: none;
+        aspect-ratio: 1
     }
 
     .character-marker {
-        display: none;
+        display: none
     }
 
-    .character-copy, .character-row-reverse .character-copy {
+    .character-copy,
+    .character-row-reverse .character-copy {
+        order: 2;
         width: 100%;
         padding-top: 20px;
         text-align: left;
-        font-size: 17px;
-        line-height: 1.7;
+        font-size: 16px;
+        line-height: 1.65
     }
 
     .character-copy h3 {
         font-size: 28px;
         line-height: 1.3;
-        letter-spacing: .5px;
+        letter-spacing: .5px
     }
 
-    .character-copy .character-description {
-        margin-top: 14px;
+    .character-copy h4 {
+        margin-top: 8px;
+        font-size: 17px;
+        line-height: 1.45
     }
 
-    .character-copy .character-facts {
-        margin-top: 18px;
+    .character-description,
+    .character-facts {
+        margin-top: 14px
+    }
+
+    .character-row-reverse .character-facts div {
+        justify-content: flex-start
     }
 }
